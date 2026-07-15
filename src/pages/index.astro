@@ -1,69 +1,103 @@
+---
 import '../styles/global.css';
-const stack = ['C#', 'Lua', 'Vue', 'TypeScript', 'PostgreSQL', 'Prisma'];
+const stack = ['C#', 'Lua', 'Vue', 'TypeScript', 'Astro', 'Node.js'];
+const databases = ['PostgreSQL', 'Prisma', 'Supabase', 'SQL'];
 const projects = [
-  { name: 'Project One', desc: 'A quick description of what it does.', link: '#' },
-  { name: 'Project Two', desc: 'Built with Vue and Supabase.', link: '#' },
+  { name: 'Project One', desc: 'A polished app idea with a clean interface and real utility.', link: '#' },
+  { name: 'Project Two', desc: 'Built with Vue and Supabase for a fast, modern experience.', link: '#' },
 ];
+---
 
 <!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Name</title>
+    <title>uxni | Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
-  
+
   <body class="min-h-screen">
-    <div class="max-w-2xl mx-auto px-6 py-20 md:py-32">
-      <header class="mb-20">
-        <h1 class="text-xl font-semibold text-zinc-100">Your Name</h1>
-        <p class="text-zinc-500 mt-1">Software Engineer. I build things for the web and beyond.</p>
+    <div class="max-w-3xl mx-auto px-6 py-20 md:py-32">
+      <header class="mb-16">
+        <p class="text-sm uppercase tracking-[0.3em] text-zinc-500 mb-4">Portfolio</p>
+        <h1 class="text-3xl md:text-4xl font-semibold text-zinc-100">Hey, I’m uxni.</h1>
+        <p class="mt-4 text-lg text-zinc-400 leading-relaxed">
+          I build practical software for the web and beyond, usually with a simple solution and a little bit of humor.
+          I’m also a lazy programmer in the best way possible: I’d rather build something smart and clean than over-engineer it.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://github.com/uxni" class="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-500 hover:text-white">GitHub</a>
+          <a href="mailto:you@email.com" class="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-500 hover:text-white">Email</a>
+        </div>
       </header>
-      <section class="mb-16">
-        <h2 class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4">About</h2>
+
+      <section class="mb-14 rounded-2xl border border-zinc-900 bg-zinc-950/70 p-6">
+        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">About</h2>
         <p class="text-zinc-400 leading-relaxed">
-          I'm a developer who likes building clean, fast software. I work across the stack, 
-          from game logic in <span class="text-zinc-200">C#</span> and <span class="text-zinc-200">Lua</span> 
-          to web apps using <span class="text-zinc-200">Vue</span>, <span class="text-zinc-200">TypeScript</span>, 
-          and <span class="text-zinc-200">Postgres</span>. 
+          I’m shaped by a Jamaican, American, and Spanish background, so I bring a mix of warmth, grit, and real-world perspective to everything I build.
+          I like making tools that feel polished, fast, and genuinely useful without being overcomplicated.
         </p>
       </section>
-      <section class="mb-16">
-        <h2 class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4">Stack</h2>
+
+      <section class="mb-14">
+        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">Stack</h2>
         <div class="flex flex-wrap gap-2">
           {stack.map((tech) => (
-            <span class="px-2.5 py-1 text-xs font-medium rounded-md bg-zinc-900 text-zinc-400 border border-zinc-800">
+            <span class="rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-sm text-zinc-300">
               {tech}
             </span>
           ))}
         </div>
       </section>
-      <section class="mb-16">
-        <h2 class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-4">Projects</h2>
+
+      <section class="mb-14">
+        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">Databases</h2>
+        <div class="flex flex-wrap gap-2">
+          {databases.map((db) => (
+            <span class="rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-sm text-zinc-300">
+              {db}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-14 rounded-2xl border border-zinc-900 bg-zinc-950/70 p-6">
+        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">GitHub</h2>
+        <div class="space-y-4">
+          <a href="https://github.com/uxni" class="inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-white">
+            <span>GitHub profile</span>
+            <span>↗</span>
+          </a>
+          <div class="grid gap-4 md:grid-cols-2">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=uxni&show_icons=true&theme=tokyonight&hide_border=true"
+              alt="Stats"
+              class="w-full rounded-xl border border-zinc-800"
+            />
+            <img
+              src="https://github-readme-streak-stats.herokuapp.com/?user=uxni&theme=tokyonight&hide_border=true"
+              alt="Streak"
+              class="w-full rounded-xl border border-zinc-800"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">Projects</h2>
         <div class="space-y-4">
           {projects.map((project) => (
-            <a href={project.link} class="block group">
+            <a href={project.link} class="block rounded-xl border border-zinc-900 bg-zinc-950/60 p-4 transition hover:border-zinc-700 hover:bg-zinc-900/80">
               <div class="flex items-baseline justify-between">
-                <h3 class="text-zinc-200 font-medium group-hover:text-white">
-                  {project.name}
-                </h3>
-                <span class="text-zinc-600 text-sm group-hover:text-zinc-400">↗</span>
+                <h3 class="font-medium text-zinc-200">{project.name}</h3>
+                <span class="text-sm text-zinc-500">↗</span>
               </div>
-              <p class="text-sm text-zinc-500 mt-1">{project.desc}</p>
+              <p class="mt-1 text-sm text-zinc-500">{project.desc}</p>
             </a>
           ))}
         </div>
       </section>
-      <footer class="pt-8 border-t border-zinc-900">
-        <div class="flex items-center gap-6 text-sm text-zinc-500">
-          <a href="https://github.com/yourusername" class="hover:text-zinc-200">GitHub</a>
-          <a href="mailto:you@email.com" class="hover:text-zinc-200">Email</a>
-          <span class="text-zinc-800">•</span>
-          <span>© 2026</span>
-        </div>
-      </footer>
-
     </div>
   </body>
 </html>
