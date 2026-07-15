@@ -3,101 +3,150 @@ import '../styles/global.css';
 const stack = ['C#', 'Lua', 'Vue', 'TypeScript', 'Astro', 'Node.js'];
 const databases = ['PostgreSQL', 'Prisma', 'Supabase', 'SQL'];
 const projects = [
-  { name: 'Project One', desc: 'A polished app idea with a clean interface and real utility.', link: '#' },
-  { name: 'Project Two', desc: 'Built with Vue and Supabase for a fast, modern experience.', link: '#' },
+  { name: 'Project One', desc: 'A polished app with a minimal, performance-first interface designed for real-world utility.', link: '#' },
+  { name: 'Project Two', desc: 'A high-performance web dashboard built with Vue, Supabase, and real-time state sync.', link: '#' },
 ];
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>uxni | Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      /* Custom keyframes injected cleanly for the initial load animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-400 { animation-delay: 400ms; }
+      .delay-500 { animation-delay: 500ms; }
+    </style>
   </head>
 
-  <body class="min-h-screen">
-    <div class="max-w-3xl mx-auto px-6 py-20 md:py-32">
-      <header class="mb-16">
-        <p class="text-sm uppercase tracking-[0.3em] text-zinc-500 mb-4">Portfolio</p>
-        <h1 class="text-3xl md:text-4xl font-semibold text-zinc-100">Hey, I’m uxni.</h1>
-        <p class="mt-4 text-lg text-zinc-400 leading-relaxed">
-          I build practical software for the web and beyond, usually with a simple solution and a little bit of humor.
-          I’m also a lazy programmer in the best way possible: I’d rather build something smart and clean than over-engineer it.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="https://github.com/uxni" class="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-500 hover:text-white">GitHub</a>
-          <a href="mailto:you@email.com" class="rounded-full border border-zinc-700 px-4 py-2 text-sm text-zinc-300 hover:border-zinc-500 hover:text-white">Email</a>
+  <body class="bg-[#09090b] text-zinc-400 selection:bg-zinc-800 selection:text-zinc-100 min-h-screen relative overflow-x-hidden font-sans antialiased">
+    
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] pointer-events-none select-none opacity-[0.15] mix-blend-screen">
+      <div class="absolute inset-0 bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent blur-[120px] rounded-full"></div>
+    </div>
+
+    <div class="max-w-2xl mx-auto px-6 py-20 md:py-32 relative z-10 flex flex-col min-h-screen">
+      
+      <header class="mb-16 opacity-0 animate-fade-in">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">Available for projects</p>
         </div>
+        <h1 class="text-3xl font-medium tracking-tight text-zinc-100">Hey, I’m uxni.</h1>
+        <p class="mt-4 text-base text-zinc-400 leading-relaxed max-w-[540px]">
+          I build clean, responsive web software. I focus on writing straightforward code that solves complex problems without over-engineering the architecture.
+        </p>
       </header>
 
-      <section class="mb-14 rounded-2xl border border-zinc-900 bg-zinc-950/70 p-6">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">About</h2>
-        <p class="text-zinc-400 leading-relaxed">
-          I’m shaped by a Jamaican, American, and Spanish background, so I bring a mix of warmth, grit, and real-world perspective to everything I build.
-          I like making tools that feel polished, fast, and genuinely useful without being overcomplicated.
+      <section class="mb-16 opacity-0 animate-fade-in delay-100">
+        <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-3">About</h2>
+        <p class="text-sm text-zinc-400 leading-relaxed">
+          I genuinely enjoy designing interfaces and experimenting with fresh frontend patterns. For me, the best way to learn is by shipping real projects and breaking things along the way. I constantly aim to keep my markup lightweight, my UI intuitive, and my performance scores close to perfect.
         </p>
       </section>
 
-      <section class="mb-14">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">Stack</h2>
+      <section class="mb-14 opacity-0 animate-fade-in delay-200">
+        <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-4">Stack</h2>
         <div class="flex flex-wrap gap-2">
           {stack.map((tech) => (
-            <span class="rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-sm text-zinc-300">
+            <span class="rounded-md border border-zinc-900 bg-zinc-950 px-3 py-1 text-xs text-zinc-400 hover:text-zinc-200 hover:border-zinc-800 hover:bg-zinc-900/50 hover:-translate-y-[1px] transition-all duration-300 cursor-default select-none">
               {tech}
             </span>
           ))}
         </div>
       </section>
 
-      <section class="mb-14">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">Databases</h2>
+      <section class="mb-14 opacity-0 animate-fade-in delay-200">
+        <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-4">Databases</h2>
         <div class="flex flex-wrap gap-2">
           {databases.map((db) => (
-            <span class="rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-sm text-zinc-300">
+            <span class="rounded-md border border-zinc-900 bg-zinc-950 px-3 py-1 text-xs text-zinc-400 hover:text-zinc-200 hover:border-zinc-800 hover:bg-zinc-900/50 hover:-translate-y-[1px] transition-all duration-300 cursor-default select-none">
               {db}
             </span>
           ))}
         </div>
       </section>
 
-      <section class="mb-14 rounded-2xl border border-zinc-900 bg-zinc-950/70 p-6">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">GitHub</h2>
-        <div class="space-y-4">
-          <a href="https://github.com/uxni" class="inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-white">
-            <span>GitHub profile</span>
-            <span>↗</span>
+      <section class="mb-14 opacity-0 animate-fade-in delay-300">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">GitHub Activity</h2>
+          <a href="https://github.com/uxni" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-300 transition-colors duration-200">
+            <span>Profile</span>
+            <svg class="w-3 h-3 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
           </a>
-          <div class="grid gap-4 md:grid-cols-2">
-            <img
-              src="https://github-readme-stats.vercel.app/api?username=uxni&show_icons=true&theme=tokyonight&hide_border=true"
-              alt="Stats"
-              class="w-full rounded-xl border border-zinc-800"
-            />
-            <img
-              src="https://github-readme-streak-stats.herokuapp.com/?user=uxni&theme=tokyonight&hide_border=true"
-              alt="Streak"
-              class="w-full rounded-xl border border-zinc-800"
-            />
-          </div>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2 p-4 rounded-xl border border-zinc-900 bg-zinc-950/40 backdrop-blur-sm">
+          <img
+            src="https://github-readme-stats.vercel.app/api?username=uxni&show_icons=true&theme=tokyonight&hide_border=true&bg_color=09090b"
+            alt="Stats"
+            class="w-full rounded-lg opacity-85 hover:opacity-100 transition-opacity duration-300"
+          />
+          <img
+            src="https://github-readme-streak-stats.herokuapp.com/?user=uxni&theme=tokyonight&hide_border=true&background=09090b"
+            alt="Streak"
+            class="w-full rounded-lg opacity-85 hover:opacity-100 transition-opacity duration-300"
+          />
         </div>
       </section>
 
-      <section class="mb-10">
-        <h2 class="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-4">Projects</h2>
-        <div class="space-y-4">
+      <section class="mb-20 opacity-0 animate-fade-in delay-400">
+        <h2 class="text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 mb-4">Projects</h2>
+        <div class="space-y-3">
           {projects.map((project) => (
-            <a href={project.link} class="block rounded-xl border border-zinc-900 bg-zinc-950/60 p-4 transition hover:border-zinc-700 hover:bg-zinc-900/80">
-              <div class="flex items-baseline justify-between">
-                <h3 class="font-medium text-zinc-200">{project.name}</h3>
-                <span class="text-sm text-zinc-500">↗</span>
+            <a href={project.link} class="group block rounded-xl border border-zinc-900/60 bg-zinc-950/20 p-5 transition-all duration-300 hover:border-zinc-800 hover:bg-zinc-900/30 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/20">
+              <div class="flex items-center justify-between">
+                <h3 class="font-medium text-sm text-zinc-200 group-hover:text-zinc-100 transition-colors duration-200">{project.name}</h3>
+                <span class="text-zinc-600 group-hover:text-zinc-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
               </div>
-              <p class="mt-1 text-sm text-zinc-500">{project.desc}</p>
+              <p class="mt-2 text-xs text-zinc-500 leading-relaxed group-hover:text-zinc-400 transition-colors duration-200">{project.desc}</p>
             </a>
           ))}
         </div>
       </section>
+
+      <footer class="mt-auto pt-8 border-t border-zinc-900/60 flex items-center justify-between opacity-0 animate-fade-in delay-500">
+        <p class="text-xs text-zinc-600">© 2026 uxni.</p>
+        
+        <div class="flex items-center gap-5">
+          <a href="https://github.com/uxni" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="text-zinc-500 hover:text-zinc-200 hover:-translate-y-0.5 transition-all duration-300 ease-out">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.577.688.479C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/>
+            </svg>
+          </a>
+
+          <a href="https://discord.com" target="_blank" rel="noopener noreferrer" aria-label="Discord Server" class="text-zinc-500 hover:text-zinc-200 hover:-translate-y-0.5 transition-all duration-300 ease-out">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.094 13.094 0 01-1.873-.894.077.077 0 01-.008-.128c.126-.093.252-.19.372-.287a.075.075 0 01.077-.011c3.92 1.793 8.18 1.793 12.061 0a.073.073 0 01.078.009c.12.099.246.195.373.289a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.894.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.156 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.156-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.156 2.418z"/>
+            </svg>
+          </a>
+
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube Channel" class="text-zinc-500 hover:text-zinc-200 hover:-translate-y-0.5 transition-all duration-300 ease-out">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.507a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.507 9.388.507 9.388.507s7.517 0 9.388-.507a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </footer>
+
     </div>
   </body>
 </html>
